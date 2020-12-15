@@ -1,0 +1,61 @@
+//mixin for converting fonts
+
+// 100: Thin;
+// 200: Extra Light (Ultra Light);
+// 300: Light;
+// 400: Normal;
+// 500: Medium;
+// 600: Semi Bold (Demi Bold);
+// 700: Bold;
+// 800: Extra Bold (Ultra Bold);
+// 900: Black (Heavy).
+
+@mixin font($font_name, $file_name, $weight, $style)
+  @font-face
+    font-family: $font_name
+    font-display: swap
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2")
+    font-weight: #{$weight}
+    font-style: #{$style}
+
+//mixin for retina in css
+@mixin retina($density: 2)
+  @media only screen and (-webkit-min-device-pixel-ratio: $density),
+  only screen and (min--moz-device-pixel-ratio: $density),
+  only screen and (-o-min-device-pixel-ratio: #{$density}/1),
+  only screen and (min-device-pixel-ratio: $density),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: $density dppx)
+    @content
+
+// IMPORT SECTION
+
+// CSS library plug-in example (npm i --save-dev normalize.css)
+// @import "../../node_modules/normalize.css/normalize.css"
+
+// @import "../libs/font-awesome/css/font-awesome.min.css"
+
+// USER VARIABLES SECTION
+
+$fontfamily: "PtSansNarrow", Arial, sans-serif
+$fontsize:   14px
+$lineheight: 24px
+$fontweight: 700
+$color: #ffffff
+
+//BREAKPOINTS
+
+$break_xl: 1200px
+$break_lg: 992px
+$break_md: 768px
+$break_sm: 576px
+$break_xs: 480px
+$break_xxs: 320px
+
+=to($max_width)
+  @media screen and (max-width: $max_width)
+    @content
+
+=from($min_width)
+  @media screen and (min-width: $min_width)
+    @content
