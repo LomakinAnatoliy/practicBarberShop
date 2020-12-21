@@ -14,16 +14,11 @@ body
   line-height: $lineheight
   font-weight: $fontweight
   color: $color
-  text-transform: uppercase
-  background-color: #000000
-
-a
-  text-decoration: none
+  background-color: $background-color
 
 img
   max-width: 100%
-  height: 100%
-  object-fit: cover
+  height: auto
 
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
@@ -45,74 +40,42 @@ input[type="radio"].visually-hidden
     margin: 0 auto
     padding: 0 10px
 
-.button
-  margin: 0
-  padding: 0
-  font: inherit
-  text-align: center
-  color: $color
-  vertical-align: middle
-  text-transform: uppercase
-  background-color: #000000
-  border: none
-  &:hover,
-  &:focus,
-    background-color: #663d15
-
-.wrapper-background
+.background-image
   &.visible
-  background-image: url("../img/@1x/background.jpg")
-  background-position: top center
-  background-repeat: no-repeat
+    background-image: url("../image/@1x/background.jpg")
+    background-position: top center
+    background-repeat: no-repeat
   @include retina
-    background-image: url("../img/@2x/background.jpg")
-
-.header
-  &__menu
-    display: grid
-    grid-template-columns: 1fr
-    grid-template-rows: repeat(2, auto)
-  &__logo
-    grid-row: -1
-    margin: 0 auto
-    width: 360px
-    height: 150px
-
-.menu,
-.user
-  &__list
-    margin: 0
-    padding: 0
-    list-style: none
-  &__link
-    display: block
-    padding: 25px 20px
-    color: $color
-    transition: all 0.3s
-    &:hover,
-    &:focus,
-    &:active
-      background-color: #242424
+    background-image: url("../image/@2x/background.jpg")
 
 .menu
-  &__wrapper
-    grid-row: 1 / 2
-    display: grid
-    grid-template-columns: 1fr minmax(auto, 700px) minmax(auto, 220px) 1fr
-    background-color: #000000
-    margin-bottom: 60px
+  display: grid
+  grid-template-columns: 1fr max-content
+  grid-template-rows: repeat(2, min-content)
+  margin: 0 auto
+  &__logo
+    grid-row: 2/3
+    justify-self: center
+  &__wrap
+    background-color: $background-color
+  &__box
+    display: flex
+    justify-content: space-between
+    max-width: 960px
+    min-width: 320px
+    margin: 0 auto
+  &__list,
+  &__item
+    margin: 0
+    padding: 0
   &__list
-    grid-column: 2 / 3
     display: grid
-    grid-template-columns: repeat(6, max-content)
-    padding-left: 10px
-
-.user
-  &__list
-    grid-column: 3 / 4
-    display: grid
-    grid-template-columns: repeat(3, max-content)
-    justify-content: end
-    padding-right: 10px
-
-@import media
+    grid-template-columns: repeat(5, max-content)
+  &__item
+    list-style-type: none
+  &__link
+    font-size: 18px
+    font-weight: 700
+    color: $color
+    text-transform: uppercase
+    text-decoration: none

@@ -2,25 +2,40 @@
 <html lang="ru">
  
 <head>
- 
-  <meta charset="UTF-8">
-  <title>Document</title>
- 
-  <!-- Подключаем стили проекта -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BarberShop</title>
   <link rel="stylesheet" href="css/style.min.css">
- 
 </head>
- 
 <body>
-  
-  <a href="#">Helo</a>
-  <p>Далеко-далеко за словесными горами в стране, гласных и согласных...</p>
- 
-  <!-- Подключаем оптимизированное изображение -->
-  <img src="images/dest/image.jpg" alt="Alt">
- 
-  <!-- Подключаем скрипты проекта -->
-  <script src="js/script.min.js"></script>
- 
+  <div class="background-image lazy-background">
+    <header class="header">
+      <nav class="header__menu menu">
+        <a class="menu__logo logo">
+          <img src="image/svg/index-logo.svg" width="370px" height="170px" alt="Логотип магазина «BarberShop»">
+        </a>
+        <div class="menu__wrap">
+          <div class="menu__box">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a class="menu__link active">Главная</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Наши работы</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Записаться</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Контакты</a>
+              </li>
+            </ul>
+            <a class="menu__link" href="#">Войти</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </div>
+<script src="js/script.min.js"></script>
 </body>
 </html>
