@@ -6,6 +6,10 @@
 *::after
   box-sizing: border-box
 
+*:active
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
+  -webkit-tap-highlight-color: transparent
+
 body
   margin: 0
   padding: 0
@@ -19,6 +23,9 @@ body
 img
   max-width: 100%
   height: auto
+
+a, button
+  outline: none
 
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
@@ -40,42 +47,205 @@ input[type="radio"].visually-hidden
     margin: 0 auto
     padding: 0 10px
 
-.background-image
-  &.visible
-    background-image: url("../image/@1x/background.jpg")
-    background-position: top center
-    background-repeat: no-repeat
+.background-image.visible
+  height: 100vh
+  background-image: url("../image/@1x/background-img.jpg")
+  background-position: top center
+  background-repeat: no-repeat
+  background-size: cover
   @include retina
-    background-image: url("../image/@2x/background.jpg")
+    background-image: url("../image/@2x/background-img.jpg")
 
-.menu
+.header
   display: grid
   grid-template-columns: 1fr max-content
   grid-template-rows: repeat(2, min-content)
-  margin: 0 auto
+  grid-row-gap: 55px
+  +to($break_sm)
+    grid-row-gap: 0
   &__logo
     grid-row: 2/3
-    justify-self: center
+
+.logo
+  & picture
+    display: flex
+    justify-content: center
+  +to($break_sm)
+    grid-row: 1/2
+    width: 100%
+    background-color: #242424
+    & img
+      width: 225px !important
+      height: auto !important
+
+.menu
+  background-color: $background-color
+  +to($break_sm)
+    position: relative
+    grid-row: 2/3
+    background-color: $color-accent
+  &__open
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 10
+    width: 70px
+    height: 50px
+    padding: 15px 17px
+    align-self: baseline
+    background-color: #6a4d38
+    border: none
+    cursor: pointer
+    transition: all 0.3s ease
+    &::before
+      content: ''
+      position: absolute
+      top: 15px
+      left: 17px
+      width: 37px
+      height: 2px
+      background-color: $link-color
+      box-shadow: 0 8px 0 0 $link-color, 0 16px 0 0 $link-color
+    &:hover,
+    &:focus
+      background-color: #755a46
+    &:active::before
+      opacity: 0.3
+    +from($break_sm)
+      display: none
   &__wrap
-    background-color: $background-color
-  &__box
     display: flex
     justify-content: space-between
     max-width: 960px
     min-width: 320px
     margin: 0 auto
+    +to($break-md)
+      justify-content: center
+    +to($break_sm)
+      display: block
+      margin: 0
   &__list,
+  &__user,
   &__item
     margin: 0
     padding: 0
+  &__item
+    padding: 25px 30px
+    text-align: center
+    background-color: $link-bg-color
+    list-style-type: none
+    transition: all 0.3s ease
+    &:hover,
+    &:active
+      background-color: $link-hover-bg
+      cursor: pointer
+    &:hover
+      & .menu__link
+        color: $link-hover
+    &:active
+      & .menu__link
+        opacity: 0.3
+    &--active
+      pointer-events: none
+    +to($break-md)
+      padding-right: 15px
+      padding-left: 15px
+      &:hover,
+      &:active
+        background-color: $link-bg-color
+      &:hover
+        & .menu__link
+          color: $color-accent
+      &:active
+        & .menu__link
+          color: $link-color
+    +to($break_sm)
+      padding-top: 11px
+      padding-bottom: 11px
+      text-align: start
+      background-color: $color-accent
+      border-top: 1px solid #886e5b
+      border-bottom: 1px solid #71543f
+      &:hover,
+      &:active
+        background-color: $color-accent
+        & .menu__link
+          color: $link-color
   &__list
     display: grid
     grid-template-columns: repeat(5, max-content)
-  &__item
-    list-style-type: none
+    +to($break_sm)
+      display: block
   &__link
+    display: block
     font-size: 18px
     font-weight: 700
-    color: $color
     text-transform: uppercase
     text-decoration: none
+    color: $link-color
+    &--active
+      position: relative
+      &::after
+        content: ''
+        position: absolute
+        left: 0
+        bottom: -27px
+        height: 3px
+        width: 100%
+        background-color: $color-accent
+      +to($break_sm)
+        &::after
+          display: none
+
+.user
+  &__item
+    &:hover
+      & .user__link
+        color: $link-hover
+      & .user__icon
+        opacity: 1
+        fill: #000000
+    &:active
+      & .user__link,
+        opacity: 0.3
+    +to($break-md)
+      &:hover
+        & .user__icon
+          fill: $color-accent
+      &:active
+        & .user__icon
+          fill: #ffffff
+    +to($break_sm)
+      background-color: #6a4d38
+      & .user__icon
+          opacity: 0.15
+      &:hover,
+      &:active
+        background-color: #6a4d38
+        & .user__link
+          color: $link-color
+      &:active
+        & .user__icon
+          opacity: 0.4
+  &__icon
+    height: 27px
+    margin-right: 20px
+    opacity: 0.3
+    fill: #ffffff
+    +to($break-md)
+      margin-right: 0
+    +to($break_sm)
+      margin-right: 13px
+  &__link
+    display: flex
+    align-items: center
+    +to($break-md)
+      position: relative
+      & span
+        position: absolute
+        opacity: 0
+    +to($break_sm)
+      & span
+        position: static
+        text-transform: none
+        opacity: 1

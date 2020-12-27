@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
- 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,32 +9,45 @@
 <body>
   <div class="background-image lazy-background">
     <header class="header">
-      <nav class="header__menu menu">
-        <a class="menu__logo logo">
-          <img src="image/svg/index-logo.svg" width="370px" height="170px" alt="Логотип магазина «BarberShop»">
-        </a>
+      <a class="header__logo logo">
+        <picture>
+          <source media="(min-width: 768px)" srcset="image/svg/logo-desctop.svg">
+          <source media="(min-width: 576px)" srcset="image/svg/logo-tablet.svg">
+          <img class="logo" style="width: 370px; height: 155px;" src="image/svg/logo-mobile.svg" alt="Логотип парикмахерской «BarberShop»">
+        </picture>
+      </a>
+      <nav class="header__manu menu">
+        <button class="menu__open" type="button"><span class="visually-hidden">Открыть меню</span></button>
         <div class="menu__wrap">
-          <div class="menu__box">
-            <ul class="menu__list">
-              <li class="menu__item">
-                <a class="menu__link active">Главная</a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__link" href="#">Наши работы</a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__link" href="#">Записаться</a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__link" href="#">Контакты</a>
-              </li>
-            </ul>
-            <a class="menu__link" href="#">Войти</a>
-          </div>
+          <ul class="menu__list">
+            <li class="menu__item menu__item--active">
+              <a class="menu__link menu__link--active">Главная</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Наша работа</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Записаться</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Контакты</a>
+            </li>
+          </ul>
+          <ul class="menu__user user">
+            <li class="menu__item user__item">
+              <a class="menu__link user__link" href="#">
+                <svg class="user__icon" width="16px" height="27px" viewBox="0 0 16 16">
+                  <polygon points="0,7 7,7 7,4.1 11,8 7,11.9 7,9.1 0,9 "/>
+                  <polygon points="7,0 7,2 14,2 14,14 7,14 7,16 16,16 16,0 "/>
+                </svg>
+                <span>Войти</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
   </div>
-<script src="js/script.min.js"></script>
+  <script src="js/script.min.js"></script>
 </body>
 </html>

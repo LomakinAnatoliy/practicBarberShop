@@ -19,6 +19,10 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
+*:active {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent; }
+
 body {
   margin: 0;
   padding: 0;
@@ -32,6 +36,9 @@ body {
 img {
   max-width: 100%;
   height: auto; }
+
+a, button {
+  outline: none; }
 
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
@@ -55,29 +62,88 @@ input[type="radio"].visually-hidden {
   padding: 0 10px; }
 
 .no-webp .background-image.visible{
-  background-image: url("../image/@1x/background.jpg"); }
+  background-image: url("../image/@1x/background-img.jpg"); }
 
 .background-image.visible {
+  height: 100vh;
   background-position: top center;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-size: cover; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2 dppx) {
+    .no-webp .background-image.visible{
+    background-image: url("../image/@2x/background-img.jpg"); } }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2 dppx) {
-  .no-webp .background-image{
-    background-image: url("../image/@2x/background.jpg"); } }
-
-.menu {
+.header {
   display: grid;
   grid-template-columns: 1fr -webkit-max-content;
   grid-template-columns: 1fr max-content;
   grid-template-rows: repeat(2, -webkit-min-content);
   grid-template-rows: repeat(2, min-content);
-  margin: 0 auto; }
-  .menu__logo {
-    grid-row: 2/3;
-    justify-self: center; }
+  grid-row-gap: 55px; }
+  @media screen and (max-width: 576px) {
+    .header {
+      grid-row-gap: 0; } }
+  .header__logo {
+    grid-row: 2/3; }
+
+.logo picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+@media screen and (max-width: 576px) {
+  .logo {
+    grid-row: 1/2;
+    width: 100%;
+    background-color: #242424; }
+    .logo img {
+      width: 225px !important;
+      height: auto !important; } }
+
+.menu {
+  background-color: #000000; }
+  @media screen and (max-width: 576px) {
+    .menu {
+      position: relative;
+      grid-row: 2/3;
+      background-color: #826550; } }
+  .menu__open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 70px;
+    height: 50px;
+    padding: 15px 17px;
+    -ms-flex-item-align: baseline;
+        align-self: baseline;
+    background-color: #6a4d38;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .menu__open::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 17px;
+      width: 37px;
+      height: 2px;
+      background-color: #ffffff;
+      -webkit-box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff;
+              box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff; }
+    .menu__open:hover, .menu__open:focus {
+      background-color: #755a46; }
+    .menu__open:active::before {
+      opacity: 0.3; }
+    @media screen and (min-width: 576px) {
+      .menu__open {
+        display: none; } }
   .menu__wrap {
-    background-color: #000000; }
-  .menu__box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -87,21 +153,143 @@ input[type="radio"].visually-hidden {
     max-width: 960px;
     min-width: 320px;
     margin: 0 auto; }
-  .menu__list, .menu__item {
+    @media screen and (max-width: 768px) {
+      .menu__wrap {
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; } }
+    @media screen and (max-width: 576px) {
+      .menu__wrap {
+        display: block;
+        margin: 0; } }
+  .menu__list, .menu__user, .menu__item {
     margin: 0;
     padding: 0; }
+  .menu__item {
+    padding: 25px 30px;
+    text-align: center;
+    background-color: #000000;
+    list-style-type: none;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .menu__item:hover, .menu__item:active {
+      background-color: #ffffff;
+      cursor: pointer; }
+    .menu__item:hover .menu__link {
+      color: #000000; }
+    .menu__item:active .menu__link {
+      opacity: 0.3; }
+    .menu__item--active {
+      pointer-events: none; }
+    @media screen and (max-width: 768px) {
+      .menu__item {
+        padding-right: 15px;
+        padding-left: 15px; }
+        .menu__item:hover, .menu__item:active {
+          background-color: #000000; }
+        .menu__item:hover .menu__link {
+          color: #826550; }
+        .menu__item:active .menu__link {
+          color: #ffffff; } }
+    @media screen and (max-width: 576px) {
+      .menu__item {
+        padding-top: 11px;
+        padding-bottom: 11px;
+        text-align: start;
+        background-color: #826550;
+        border-top: 1px solid #886e5b;
+        border-bottom: 1px solid #71543f; }
+        .menu__item:hover, .menu__item:active {
+          background-color: #826550; }
+          .menu__item:hover .menu__link, .menu__item:active .menu__link {
+            color: #ffffff; } }
   .menu__list {
     display: grid;
     grid-template-columns: repeat(5, -webkit-max-content);
     grid-template-columns: repeat(5, max-content); }
-  .menu__item {
-    list-style-type: none; }
+    @media screen and (max-width: 576px) {
+      .menu__list {
+        display: block; } }
   .menu__link {
+    display: block;
     font-size: 18px;
     font-weight: 700;
-    color: #ffffff;
     text-transform: uppercase;
-    text-decoration: none; }
-  .webp .background-image.visible{ background-image: url(../image/@1x/background.webp); }
+    text-decoration: none;
+    color: #ffffff; }
+    .menu__link--active {
+      position: relative; }
+      .menu__link--active::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -27px;
+        height: 3px;
+        width: 100%;
+        background-color: #826550; }
+      @media screen and (max-width: 576px) {
+        .menu__link--active::after {
+          display: none; } }
+
+.user__item:hover .user__link {
+  color: #000000; }
+
+.user__item:hover .user__icon {
+  opacity: 1;
+  fill: #000000; }
+
+.user__item:active .user__link {
+  opacity: 0.3; }
+
+@media screen and (max-width: 768px) {
+  .user__item:hover .user__icon {
+    fill: #826550; }
+  .user__item:active .user__icon {
+    fill: #ffffff; } }
+
+@media screen and (max-width: 576px) {
+  .user__item {
+    background-color: #6a4d38; }
+    .user__item .user__icon {
+      opacity: 0.15; }
+    .user__item:hover, .user__item:active {
+      background-color: #6a4d38; }
+      .user__item:hover .user__link, .user__item:active .user__link {
+        color: #ffffff; }
+    .user__item:active .user__icon {
+      opacity: 0.4; } }
+
+.user__icon {
+  height: 27px;
+  margin-right: 20px;
+  opacity: 0.3;
+  fill: #ffffff; }
+  @media screen and (max-width: 768px) {
+    .user__icon {
+      margin-right: 0; } }
+  @media screen and (max-width: 576px) {
+    .user__icon {
+      margin-right: 13px; } }
+
+.user__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  @media screen and (max-width: 768px) {
+    .user__link {
+      position: relative; }
+      .user__link span {
+        position: absolute;
+        opacity: 0; } }
+  @media screen and (max-width: 576px) {
+    .user__link span {
+      position: static;
+      text-transform: none;
+      opacity: 1; } }
+  .webp .background-image.visible{ background-image: url(../image/@1x/background-img.webp); }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2 dppx){
-  .webp .background-image{ background-image: url(../image/@2x/background.webp); } }
+  .webp .background-image.visible{ background-image: url(../image/@2x/background-img.webp); } }
