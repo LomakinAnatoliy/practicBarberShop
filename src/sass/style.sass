@@ -45,15 +45,30 @@ body
   color: $color
   background-color: $background-color
 
-
-
 .container
-    max-width: 1200px
+    max-width: 1010px
     min-width: 320px
     margin: 0 auto
-    padding: 0 25px
-    +to(680px)
-      padding: 0
+
+.button
+  display: inline-block
+  width: 140px
+  padding: 10px 0
+  font-size: 18px
+  font-weight: 700
+  line-height: 24px
+  text-align: center
+  text-transform: uppercase
+  text-decoration: none
+  background-color: #ffffff
+  color: #000000
+  border: 1px solid #e5ddd5
+  transition: all 0.3s ease
+  &:hover, &:focus
+    border: 1px solid #d5c9bd
+  &:active
+    color: rgba(0, 0, 0, 0.3)
+    background-color: #d5c9bd
 
 .background-image.visible
   background-image: url("../image/@1x/background-img.jpg")
@@ -279,11 +294,13 @@ body
   grid-template-columns: 1fr 2fr
   margin-top: -171px
   margin-bottom: 75px
-  background-color: $background-color
+  padding: 0 25px
   +to($break_lg)
     grid-template-columns: 1fr
     grid-template-rows: repeat(2, min-content)
     margin-top: -198px
+  +to(680px)
+    padding: 0
   &__header
     position: relative
     padding: 35px
@@ -354,6 +371,7 @@ body
       display: flex
       justify-content: space-between
       align-items: center
+      padding: 30px 20px
       &:nth-child(2n)
         background-color: #4e4e4e
     +from(680px)
@@ -383,6 +401,8 @@ body
           display: none
 
 .advantage
+  margin-bottom: 100px
+  padding: 0 25px
   color: #f7f4f1
   +to($break_md)
     padding: 0 30px
@@ -403,9 +423,11 @@ body
   &__item
     display: grid
     grid-template-rows: repeat(3, min-content)
-    padding: 0 calc( 25px + (70 - 25) * ((100vw - 320px) / (1200 -320)))
+    padding: 0 39px
     border-right: 1px solid rgba(255, 255, 255, 0.1)
     list-style-type: none
+    +to($break_lg)
+      padding: 0 15px
     +to($break_md)
       grid-template-columns: 1fr 3fr
       grid-template-rows: repeat(2, min-content)
@@ -454,6 +476,7 @@ body
     margin-bottom: 15px
     font-size: 30px
     font-weight: 700
+    line-height: 30px
     text-transform: uppercase
   &__box
     display: grid
@@ -476,3 +499,147 @@ body
       margin-right: 0
     &--active
       background-color: #ffffff
+
+.news
+  position: relative
+  margin-bottom: 40px
+  padding: 60px 0 40px 0
+  background-color: #ffffff
+  color: #000000
+  border-bottom: 1px solid #e5ddd5
+  &::after
+    content: ""
+    position: absolute
+    top: -65px
+    left: 0
+    width: 100%
+    height: 65px
+    background: linear-gradient(to left bottom, transparent 49%, #ffffff 50%) left / 50.25% 100% no-repeat, linear-gradient(to right bottom, transparent 49%, #ffffff 50%) right / 50.25% 100% no-repeat
+  &__wrap
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: repeat(2, min-content)
+    grid-row-gap: 50px
+    max-width: 1010px
+    min-width: 320px
+    margin: 0 auto
+    padding: 0 25px
+    +to($break_md)
+      grid-template-columns: repeat(4, 1fr)
+    +to($break_sm)
+      grid-template-columns: 1fr
+      grid-template-rows: repeat(4, min-content)
+      grid-row-gap: 0
+      padding: 0 20px
+  &__title
+    grid-column: span 2
+    align-self: center
+    margin-left: 70px
+    font-size: 40px
+    line-height: 40px
+    font-weight: 700
+    text-transform: uppercase
+    +to($break_md)
+      grid-column: span 3
+      margin-left: 0
+    +to($break_sm)
+      grid-column: span 1
+      grid-row: 1 / 2
+      margin-bottom: 30px
+      font-size: 30px
+      text-align: center
+  &__button
+    grid-column: 3 / 4
+    justify-self: end
+    align-self: start
+    +to($break_md)
+      grid-column: 4 / 5
+    +to($break_sm)
+      grid-column: 1 / 2
+      grid-row: 4 / 5
+      width: 100%
+  &__list
+    grid-column: span 3
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    +to($break_md)
+      grid-column: span 4
+      grid-template-columns: repeat(2, 1fr)
+    +to($break_sm)
+      grid-row: 2 / 4
+      grid-template-columns: 1fr
+      grid-template-columns: repeat (2, min-content)
+  &__item
+    list-style-type: none
+    +to($break_md)
+      &:last-child
+        display: none
+    +to($break_sm)
+      margin-bottom: 20px
+      padding-bottom: 30px
+      border-bottom: 1px solid #e5ddd5
+    +to($break_sm)
+      &:nth-child(2)
+        border: none
+        margin-bottom: 0
+  &__link
+    display: grid
+    grid-template-columns: min-content 1fr
+    grid-column-gap: 20px
+    padding-right: 40px
+    text-decoration: none
+    transition: all 0.3s ease
+    & p
+      font-size: 18px
+      color: #000000
+    &:hover, &:focus
+      & p
+        text-decoration: underline
+        color: #826550
+      & time
+        background-color: #826550
+        &::after
+          border-top-color: #826550
+    &:active
+      & p
+        color: #6a4d38
+      & time
+        background-color: #6a4d38
+        color: rgba(255, 255, 255, 0.3)
+        &::after
+          border-top-color: #6a4d38
+    +to($break_lg)
+      padding-right: 15px
+    +to($break_md)
+      padding-right: 40px
+    +to(680px)
+      padding-right: 15px
+    +to($break_sm)
+      padding-right: 0
+    & time
+      position: relative
+      display: block
+      width: 50px
+      height: 50px
+      margin-top: 10px
+      padding-top: 3px
+      text-align: center
+      font-size: 30px
+      font-weight: 700
+      color: #ffffff
+      background-color: #000000
+      &::after
+        content: ""
+        position: absolute
+        bottom: -10px
+        left: 0
+        width: 0
+        height: 0
+        border-left: 25px solid transparent
+        border-right: 25px solid transparent
+        border-top: 10px solid #000000
+    & span
+      display: block
+      font-size: 16px
+      font-weight: 400
+      line-height: 16px
