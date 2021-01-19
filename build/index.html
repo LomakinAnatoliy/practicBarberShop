@@ -13,7 +13,7 @@
         <picture>
           <source media="(min-width: 768px)" srcset="image/svg/logo-desctop.svg">
           <source media="(min-width: 576px)" srcset="image/svg/logo-tablet.svg">
-          <img class="logo" style="width: 370px; height: 155px;" src="image/svg/logo-mobile.svg" alt="Логотип парикмахерской «BarberShop»">
+          <img style="width: 370px; height: 155px;" src="image/svg/logo-mobile.svg" alt="Логотип парикмахерской «BarberShop»">
         </picture>
       </a>
       <nav class="header__manu menu">
@@ -115,10 +115,10 @@
               </p>
             </li>
           </ul>
-          <div class="advantage__box">
-            <button class="advantage__button advantage__button--active"></button>
-            <button class="advantage__button"></button>
-            <button class="advantage__button"></button>
+          <div class="advantage__dots dots">
+            <button class="dots__dot dots__dot--active" type="button"></button>
+            <button class="dots__dot " type="button"></button>
+            <button class="dots__dot " type="button"></button>
           </div>
         </section>
       </div>
@@ -146,6 +146,43 @@
               </a>
             </li>
           </ul>
+        </div>
+      </section>
+      <section class="reviews">
+        <div class="reviews__wrap">
+          <h2 class="reviews__title">Отзывы о нас</h2>
+          <a href="#" class="reviews__button button">Оставить свой</a>
+          <div class="reviews__container">
+            <button class="reviews__button-back button" type="button">
+              <span class="visually-hidden">Назад</span>
+            </button>
+            <figure class="reviews__client">
+              <div class="reviews__img-wrap">
+                <picture class="reviews__img">
+                  <source class="lazy" data-srcset="image/@1x/Norbert-Buduczki.webp 1x, image/@2x/Norbert-Buduczki.webp 2x" type="image/webp">
+                  <img class="lazy" width="250px" height="160px" src="image/gif/250x160.gif" data-src="image/@1x/Norbert-Buduczki.jpg" data-srcset="image/@1x/Norbert-Buduczki.jpg 1x, image/@2x/Norbert-Buduczki.jpg 2x" alt="Фото Norbert Buduczki">
+                </picture>
+              </div>
+              <blockquote class="reviews__box">
+                <figcaption class="reviews__client-name"><cite>Norbert Buduczki</cite></figcaption>
+                <p class="reviews__client-text">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку</p>
+              </blockquote>
+            </figure>
+            <button class="reviews__button-next button" type="button">
+              <span class="visually-hidden">Вперед</span>
+            </button>
+            <div class="reviews__dots dots">
+              <button class="reviews__dot dots__dot reviews__dot--active" type="button">
+                <span class="visually-hidden">Первый отзыв</span>
+              </button>
+              <button class="reviews__dot dots__dot " type="button">
+                <span class="visually-hidden">Второй отзыв</span>
+              </button>
+              <button class="reviews__dot dots__dot " type="button">
+                <span class="visually-hidden">Третий отзыв</span>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </main>
