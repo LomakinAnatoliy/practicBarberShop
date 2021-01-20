@@ -55,11 +55,11 @@ body
 
 .button
   display: inline-block
-  width: 140px
-  padding: 10px 0
+  width: 160px
+  padding: 15px 0
   font-size: 18px
   font-weight: 700
-  line-height: 24px
+  line-height: 20px
   text-align: center
   text-transform: uppercase
   text-decoration: none
@@ -121,6 +121,7 @@ body
       height: 105px
 
 .menu
+  z-index: 45
   background-color: #000000
   +to($break_sm)
     position: relative
@@ -171,36 +172,55 @@ body
   &__item
     margin: 0
     padding: 0
+  &__list
+    display: grid
+    grid-template-columns: repeat(5, max-content)
+    +to($break_sm)
+      display: block
   &__item
-    padding: 25px 30px
-    text-align: center
-    background-color: $link-bg-color
     list-style-type: none
+    &--active
+      padding: 25px 30px
+      +to($break-md)
+        padding-right: 15px
+        padding-left: 15px
+      +to($break_sm)
+        padding-top: 12px
+        padding-bottom: 11px
+        border-bottom: 1px solid #71543f
+  &__link
+    display: block
+    padding: 25px 30px
+    font-size: 18px
+    font-weight: 700
+    text-transform: uppercase
+    text-decoration: none
+    text-align: center
+    color: $link-color
+    background-color: $link-bg-color
     transition: all 0.3s ease
     &:hover,
+    &:focus,
     &:active
       background-color: $link-hover-bg
       cursor: pointer
-    &:hover
-      & .menu__link
-        color: $link-hover
+    &:hover,
+    &:focus
+      color: $link-hover
     &:active
-      & .menu__link
-        opacity: 0.3
-    &--active
-      pointer-events: none
+      color: rgba(0, 0, 0, 0.3)
     +to($break-md)
       padding-right: 15px
       padding-left: 15px
       &:hover,
+      &:focus,
       &:active
         background-color: $link-bg-color
-      &:hover
-        & .menu__link
-          color: $color-accent
+      &:hover,
+      &:focus
+        color: $color-accent
       &:active
-        & .menu__link
-          color: $link-color
+        color: #4d4d4d
     +to($break_sm)
       padding-top: 11px
       padding-bottom: 11px
@@ -209,24 +229,16 @@ body
       border-top: 1px solid #886e5b
       border-bottom: 1px solid #71543f
       &:hover,
+      &:focus
+        color: $link-color
+        background-color: #755a46
       &:active
-        background-color: $color-accent
-        & .menu__link
-          color: $link-color
-  &__list
-    display: grid
-    grid-template-columns: repeat(5, max-content)
-    +to($break_sm)
-      display: block
-  &__link
-    display: block
-    font-size: 18px
-    font-weight: 700
-    text-transform: uppercase
-    text-decoration: none
-    color: $link-color
+        color: rgba(255, 255, 255, 0.3)
+        background-color: #6a4d38
     &--active
       position: relative
+      padding: 0
+      pointer-events: none
       &::after
         content: ''
         position: absolute
@@ -236,39 +248,61 @@ body
         width: 100%
         background-color: $color-accent
       +to($break_sm)
+        text-align: center
+        border: none
         &::after
           display: none
 
 .user
-  &__item
-    &:hover
-      & .user__link
-        color: $link-hover
+  &__link
+    display: flex
+    align-items: center
+    &:hover,
+    &:focus
+      color: $link-hover
       & .user__icon
-        opacity: 1
+        opacity: 0.3
         fill: #000000
     &:active
-      & .user__link,
-        opacity: 0.3
+      color: rgba(0, 0, 0, 0.3)
     +to($break-md)
-      &:hover
+      position: relative
+      & span
+        position: absolute
+        opacity: 0
+      &:hover,
+      &:focus
+        color: $color-accent
         & .user__icon
           fill: $color-accent
       &:active
+        color: #4d4d4d
         & .user__icon
-          fill: #ffffff
+          opacity: 1
+          fill: $color-accent
     +to($break_sm)
       background-color: #6a4d38
+      & span
+        position: relative
+        font-weight: 400
+        text-transform: none
+        opacity: 1
       & .user__icon
           opacity: 0.15
       &:hover,
+      &:focus,
+        color: rgba(255, 255, 255, 0.5)
+        background-color: #6a4d38
       &:active
         background-color: #6a4d38
-        & .user__link
-          color: $link-color
+        color: rgba(255, 255, 255, 0.3)
+      &:hover,
+      &:focus,
+        & .user__icon
+          opacity: 0.5
       &:active
         & .user__icon
-          opacity: 0.4
+          opacity: 0.3
   &__icon
     height: 27px
     margin-right: 20px
@@ -278,19 +312,6 @@ body
       margin-right: 0
     +to($break_sm)
       margin-right: 13px
-  &__link
-    display: flex
-    align-items: center
-    +to($break-md)
-      position: relative
-      & span
-        position: absolute
-        opacity: 0
-    +to($break_sm)
-      & span
-        position: static
-        text-transform: none
-        opacity: 1
 
 .statistics
   display: grid
@@ -464,17 +485,17 @@ body
         margin-bottom: 30px
     &--fast
       &::before
-        background-image: url("../image/svg/advantage-icon-1.svg")
+        background-image: url("../image/svg/advantage-1.svg")
     &--cool
       +to($break_sm)
         display: none
       &::before
-        background-image: url("../image/svg/advantage-icon-2.svg")
+        background-image: url("../image/svg/advantage-2.svg")
     &--expensive
       +to($break_sm)
         display: none
       &::before
-        background-image: url("../image/svg/advantage-icon-3.svg")
+        background-image: url("../image/svg/advantage-3.svg")
   &__title
     margin-bottom: 15px
     font-size: 30px
@@ -518,6 +539,12 @@ body
     width: 100%
     height: 65px
     background: linear-gradient(to left bottom, transparent 49%, #ffffff 50%) left / 50.25% 100% no-repeat, linear-gradient(to right bottom, transparent 49%, #ffffff 50%) right / 50.25% 100% no-repeat
+    +to($break_md)
+      top: -40px
+      height: 40px
+    +to($break_sm)
+      top: -35px
+      height: 35px
   &__wrap
     display: grid
     grid-template-columns: repeat(3, 1fr)
@@ -651,6 +678,8 @@ body
   padding: 40px 0 45px
   color: #000000
   background-color: #ffffff
+  +to($break_sm)
+    padding-bottom: 50px
   &__wrap
     display: grid
     grid-template-columns: repeat(2, 1fr)
@@ -740,7 +769,7 @@ body
       margin: 5px 30px 0 0 
     +to($break_sm)
       margin-right: 20px
-  &__img
+  &__client-img
     display: flex
     width: 250px
     height: 160px
@@ -794,3 +823,142 @@ body
     border-color: #858483
     &--active
       background-color: #353535
+
+.footer
+  background: #292929
+  +to($break_sm)
+    position: relative
+    &::after
+      content: ""
+      position: absolute
+      top: -35px
+      left: 0
+      width: 100%
+      height: 35px
+      background: linear-gradient(to left bottom, transparent 49%, #292929 50%) left / 50.25% 100% no-repeat, linear-gradient(to right bottom, transparent 49%, #292929 50%) right / 50.25% 100% no-repeat
+  &__wrap
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    max-width: 1010px
+    min-width: 320px
+    margin: 0 auto
+    padding: 55px 25px
+    font-size: 18px
+    background: #292929
+    +to($break_md)
+      grid-template-rows: repeat(2, min-content)
+      grid-row-gap: 45px
+      padding: 55px 20px
+    +to($break_sm)
+      grid-template-rows: repeat(3, min-content)
+      grid-row-gap: 30px
+      padding: 55px 0
+  &__info
+    grid-column: 1 / 2
+    +to($break_md)
+      grid-column: 1 / 3
+      grid-row: 1 / 2
+    +to($break_sm)
+      grid-column: 1 / 4
+      text-align: center
+      margin: 0 20px
+  &__title
+    margin-bottom: 20px
+    font-weight: 700
+    text-transform: uppercase
+    +to($break_sm)
+      text-transform: none
+  &__address
+    font-style: normal
+    +to($break_sm)
+      margin-bottom: 20px
+  &__number
+    color: #ffffff
+    line-height: 20px
+    transition: all 0.3s ease
+    &:hover,
+    &:focus
+      text-decoration: none
+    &:active
+      color: rgba(255, 255, 255, 0.3)
+    +to($break_sm)
+      display: block
+      width: 100%
+      padding: 15px 0
+      outline: 1px solid  #3f3f3f
+      text-decoration: none
+      &:hover,
+      &:focus
+        outline:  1px solid #515151
+      &:active
+        background: #252525
+        outline: none
+        color: rgba(255, 255, 255, 0.3)
+  &__social
+    grid-column: 2 / 3
+    justify-self: center
+    text-align: center
+    +to($break_md)
+      grid-column: 1 / 4
+      grid-row: 2 / 3
+      justify-self: stretch
+  &__call
+    margin-bottom: 15px
+    +to($break_md)
+      display: none
+  &__list
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 6px
+    +to($break_md)
+      grid-gap: 0
+  &__item
+    list-style-type: none
+  &__link-soc
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 50px
+    height: 50px
+    outline: 1px solid #3f3f3f
+    transition: all 0.3s ease
+    &:hover,
+    &:focus
+      outline:  1px solid #515151
+    &:active
+      background: #252525
+      outline: none
+      img
+        opacity: 0.3
+    +to($break_md)
+      width: 100%
+      height: auto
+      padding: 25px 0
+  &__developer
+    grid-column: 3 / 4
+    justify-self: end
+    text-align: center
+    +to($break_sm)
+      grid-row: 3 / 4
+      grid-column: 1 / 4
+      justify-self: stretch
+      margin: 0 20px
+  &__dev
+    margin-bottom: 15px
+  &__link-dev
+    display:  block
+    color: #ffffff
+    background: transparent
+    border: none
+    outline: 1px solid #3f3f3f
+    &:hover,
+    &:focus
+      border: none
+      outline:  1px solid #515151
+    &:active
+      color: rgba(255, 255, 255, 0.3)
+      background: #252525
+      border: none
+      outline: none
+    +to($break_sm)
+      width: 100%
