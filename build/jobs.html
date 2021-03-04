@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BarberShop</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+  <div class="background-image lazy-background">
+    <header class="header">
+      <a class="header__logo logo jobs-logo" href="index.html">
+        <picture>
+          <source media="(min-width: 768px)" srcset="image/svg/logo-desctop.svg">
+          <source media="(min-width: 576px)" srcset="image/svg/logo-tablet.svg">
+          <img style="width: 370px; height: 155px;" src="image/svg/logo-mobile.svg" alt="Логотип парикмахерской «BarberShop»">
+        </picture>
+      </a>
+      <nav class="header__manu menu">
+        <button class="menu__open" type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <div class="menu__wrap">
+          <ul class="menu__list">
+            <li class="menu__item menu__item--active">
+              <a class="menu__link menu__link--active" href="#">Работы</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="index.html">Главная </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Записаться</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Контакты</a>
+            </li>
+          </ul>
+          <ul class="menu__user user">
+            <li class="menu__item user__item">
+              <a class="menu__link user__link" href="#">
+                <svg class="user__icon" width="16px" height="27px" viewBox="0 0 16 16">
+                  <polygon points="0,7 7,7 7,4.1 11,8 7,11.9 7,9.1 0,9 "/>
+                  <polygon points="7,0 7,2 14,2 14,14 7,14 7,16 16,16 16,0 "/>
+                </svg>
+                <span>Войти</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  </div>
+  <main class="jobs-contant">
+    <section class="jobs">
+      <h1 class="jobs__title">Наши работы</h1>
+      <a href="index.html" class="jobs__link button">На главную</a>
+      <ul class="jobs__list">
+        <li class="job__item job__month">
+          <div class="job__img-wrap">
+            <h2 class="job__month-title">Работа месяца</h2>
+            <picture class="job__client-img">
+              <source class="lazy" media="(max-width: 768px)" srcset="image/gif/480x480.gif" data-srcset="image/@1x/Lzhepotr-Mchislavsky-tablet.webp 1x, image/@2x/Lzhepotr-Mchislavsky-tablet.webp 2x" type="image/webp">
+              <source class="lazy" srcset="image/gif/480x480.gif" data-srcset="image/@1x/Lzhepotr-Mchislavsky.webp 1x, image/@2x/Lzhepotr-Mchislavsky.webp 2x" type="image/webp">
+              <img class="lazy" width="480" height="480" src="image/gif/480x480.gif" data-src="image/@1x/Lzhepotr-Mchislavsky.jpg" data-srcset="image/@1x/Lzhepotr-Mchislavsky.jpg 1x, image/@2x/Lzhepotr-Mchislavsky.jpg 2x" alt="Фото Лжепётр Мчиславский">
+            </picture>
+          </div>
+          <figure class="job__box job__month-box">
+            <figcaption class="job__client-name"><cite>Лжепётр Мчиславский</cite></figcaption>
+            <blockquote class="job__client-feedback job__month-feedback">
+              Где я только не стригся, но так как делаете это вы — не умеет никто другой! Еще раз спасибо и до скорого!
+            </blockquote>
+            <ul class="job__list-works job__items-works">
+              <li class="job__item-works"><p class="scissors">Стрижка</p></li>
+              <li class="job__item-works"><p class="beard">Бритье</p></li>
+              <li class="job__item-works"><p class="mustache">Усы</p></li>
+            </ul>
+          </figure>
+        </li>
+        <li class="job__item job__item-first">
+          <div class="job__img-wrap">
+            <picture class="job__client-img">
+              <source class="lazy" media="(max-width: 576px)" srcset="image/gif/294x294.gif" data-srcset="image/@1x/Sasha-Maltsev-mobile.webp 1x, image/@2x/Sasha-Maltsev-mobile.webp 2x" type="image/webp">
+              <source class="lazy" srcset="image/gif/294x294.gif" data-srcset="image/@1x/Sasha-Maltsev.webp 1x, image/@2x/Sasha-Maltsev.webp 2x" type="image/webp">
+              <img class="lazy" width="294" height="294" src="image/gif/294x294.gif" data-src="image/@1x/Sasha-Maltsev.jpg" data-srcset="image/@1x/Sasha-Maltsev.jpg 1x, image/@2x/Sasha-Maltsev.jpg 2x" alt="Фото Саша Мальцев">
+            </picture>
+          </div>
+          <figure class="job__box">
+            <figcaption class="job__client-name"><cite>Саша Мальцев</cite></figcaption>
+            <blockquote class="job__client-feedback">
+              Попросил омолодить и омолодили! Кто теперь скажет, что мне 45?
+            </blockquote>
+            <ul class="job__list-works">
+              <li class="job__item-works"><p class="scissors">Стрижка</p></li>
+            </ul>
+          </figure>
+        </li>
+        <li class="job__item job__item-second">
+          <div class="job__img-wrap">
+            <picture class="job__client-img">
+              <source class="lazy" media="(max-width: 576px)" srcset="image/gif/294x294.gif" data-srcset="image/@1x/Vladimir-Ivanych-mobile.webp 1x, image/@2x/Vladimir-Ivanych-mobile.webp 2x" type="image/webp">
+              <source class="lazy" srcset="image/gif/294x294.gif" data-srcset="image/@1x/Vladimir-Ivanych.webp 1x, image/@2x/Vladimir-Ivanych.webp 2x" type="image/webp">
+              <img class="lazy" width="294" height="294" src="image/gif/294x294.gif" data-src="image/@1x/Vladimir-Ivanych.jpg" data-srcset="image/@1x/Vladimir-Ivanych.jpg 1x, image/@2x/Vladimir-Ivanych.jpg 2x" alt="Фото Владимир Иваныч">
+            </picture>
+          </div>
+          <figure class="job__box">
+            <figcaption class="job__client-name"><cite>Владимир Иваныч</cite></figcaption>
+            <blockquote class="job__client-feedback">
+              К зимнему сезону — готов!
+            </blockquote>
+            <ul class="job__list-works">
+              <li class="job__item-works"><p class="beard">Борода</p></li>
+              <li class="job__item-works"><p class="mustache">Усы</p></li>
+            </ul>
+          </figure>
+        </li>
+        <li class="job__item job__item-third">
+          <div class="job__img-wrap">
+            <picture class="job__client-img">
+              <source class="lazy" media="(max-width: 576px)" srcset="image/gif/294x294.gif" data-srcset="image/@1x/Winston-Blue-mobile.webp 1x, image/@2x/Winston-Blue-mobile.webp 2x" type="image/webp">
+              <source class="lazy" srcset="image/gif/294x294.gif" data-srcset="image/@1x/Winston-Blue.webp 1x, image/@2x/Winston-Blue.webp 2x" type="image/webp">
+              <img class="lazy" width="294" height="294" src="image/gif/294x294.gif" data-src="image/@1x/Winston-Blue.jpg" data-srcset="image/@1x/Winston-Blue.jpg 1x, image/@2x/Winston-Blue.jpg 2x" alt="Фото Винстон Синий">
+            </picture>
+          </div>
+          <figure class="job__box">
+            <figcaption class="job__client-name"><cite>Лжепётр Мчиславский</cite></figcaption>
+            <blockquote class="job__client-feedback">
+              Как только заростаю и волосы начинают мешать видеть — бегом в Бородинский!
+            </blockquote>
+            <ul class="job__list-works">
+              <li class="job__item-works"><p class="scissors">Стрижка</p></li>
+            </ul>
+          </figure>
+        </li>
+      </ul>
+    </section>
+    <section class="price">
+      <div class="price__container container">
+        <h2 class="price__title">
+          Прейскурант
+        </h2>
+        <table class="price__table table">
+          <tr class="table__list">
+            <td class="table__number">1</td>
+            <th class="table__title">Классическая стрижка</th>
+            <td сlass="table__service">
+              <span>(</span>с мытьём головы<span>)</span>
+            </td>
+            <td class="table__price">1 500 руб.</td>
+          </tr>
+          <tr class="table__list">
+            <td class="table__number">2</td>
+            <th class="table__title">Современный вариант</th>
+            <td сlass="table__service">
+              <span>(</span>с мытьём головы<span>)</span>
+            </td>
+            <td class="table__price">1 500 руб.</td>
+          </tr>
+          <tr class="table__list">
+            <td class="table__number">3</td>
+            <th class="table__title">Индивидуальный подход</th>
+            <td сlass="table__service">
+              <span>(</span>с мытьём головы<span>)</span>
+            </td>
+            <td class="table__price">2 000 руб.</td>
+          </tr>
+          <tr class="table__list">
+            <td class="table__number">4</td>
+            <th class="table__title">Бритьё бороды</th>
+            <td сlass="table__service">
+              <span>(</span>без мытья<span>)</span>
+            </td>
+            <td class="table__price">500 руб.</td>
+          </tr>
+          <tr class="table__list">
+            <td class="table__number">5</td>
+            <th class="table__title">Бритьё головы</th>
+            <td сlass="table__service"><span>(</span>с мытьём головы<span>)</span></td>
+            <td class="table__price">1 000 руб.</td>
+          </tr>
+        </table>
+        <div class="price__discount">
+            <p class="price__text">С 10:00 до 14:00 <br>скидка 20%</p>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer__wrap">
+        <section class="footer__info">
+          <h3 class="footer__title">Барбершоп Бородинский
+          </h3>
+          <address class="footer__address">г. Санкт-Петербург, ул. Большая Конюшенная 19/8</address>
+          <a href="tel:+78125556666" class="footer__number">Тел.: +7 (812) 555-66-66</a>
+        </section>
+        <div class="footer__social">
+          <h3 class="footer__title visually-hidden">Социальные сети Барбершопа Бородинского
+          </h3>
+          <p class="footer__call">Давайте дружить!</p>
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a href="#" class="footer__link-soc">
+                <img class="footer__soc-img" width="30" height="30" src="image/svg/vk.svg">
+              </a>
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__link-soc">
+                <img class="footer__soc-img" width="30" height="30" src="image/svg/facebook.svg">
+              </a>
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__link-soc">
+                <img class="footer__soc-img" width="30" height="30" src="image/svg/instagram.svg">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__developer">
+          <p class="footer__dev">Разработано:</p>
+          <a href="#" class="button footer__link-dev">Html Academy</a>
+        </div>
+      </div>
+    </footer>
+  <script src="js/script.min.js"></script>
+</body>
+</html>
