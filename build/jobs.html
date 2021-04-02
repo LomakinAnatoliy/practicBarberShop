@@ -2,14 +2,14 @@
 <html lang="ru">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BarberShop</title>
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/jobs-min.min.css">
 </head>
 <body>
   <div class="background-image lazy-background">
     <header class="header">
-      <a class="header__logo logo jobs-logo" href="index.html">
+      <a class="header__logo logo style-logo" href="index.html">
         <picture>
           <source media="(min-width: 768px)" srcset="image/svg/logo-desctop.svg">
           <source media="(min-width: 576px)" srcset="image/svg/logo-tablet.svg">
@@ -17,17 +17,17 @@
         </picture>
       </a>
       <nav class="header__manu menu">
-        <button class="menu__open" type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <button class="menu__btn menu__btn--close" type="button"><span class="visually-hidden">Открыть меню</span></button>
         <div class="menu__wrap">
           <ul class="menu__list">
-            <li class="menu__item menu__item--active">
-              <a class="menu__link menu__link--active" href="#">Работы</a>
-            </li>
             <li class="menu__item">
               <a class="menu__link" href="index.html">Главная </a>
             </li>
+            <li class="menu__item menu__item--active">
+              <a class="menu__link menu__link--active" href="#"><span>Наши </span>работы</a>
+            </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">Записаться</a>
+              <a class="menu__link" href="appointment.html">Записаться</a>
             </li>
             <li class="menu__item">
               <a class="menu__link" href="#">Контакты</a>
@@ -48,10 +48,10 @@
       </nav>
     </header>
   </div>
-  <main class="jobs-contant">
-    <section class="jobs">
+  <main class="jobs-contеnt style-content">
+    <section class="jobs container">
       <h1 class="jobs__title">Наши работы</h1>
-      <a href="index.html" class="jobs__link button">На главную</a>
+      <a class="jobs__link button" href="index.html">На главную</a>
       <ul class="jobs__list">
         <li class="job__item job__month">
           <div class="job__img-wrap">
@@ -181,42 +181,84 @@
         </div>
       </div>
     </section>
-    <footer class="footer">
-      <div class="footer__wrap">
-        <section class="footer__info">
-          <h3 class="footer__title">Барбершоп Бородинский
-          </h3>
-          <address class="footer__address">г. Санкт-Петербург, ул. Большая Конюшенная 19/8</address>
-          <a href="tel:+78125556666" class="footer__number">Тел.: +7 (812) 555-66-66</a>
-        </section>
-        <div class="footer__social">
-          <h3 class="footer__title visually-hidden">Социальные сети Барбершопа Бородинского
-          </h3>
-          <p class="footer__call">Давайте дружить!</p>
-          <ul class="footer__list">
-            <li class="footer__item">
-              <a href="#" class="footer__link-soc">
-                <img class="footer__soc-img" width="30" height="30" src="image/svg/vk.svg">
-              </a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link-soc">
-                <img class="footer__soc-img" width="30" height="30" src="image/svg/facebook.svg">
-              </a>
-            </li>
-            <li class="footer__item">
-              <a href="#" class="footer__link-soc">
-                <img class="footer__soc-img" width="30" height="30" src="image/svg/instagram.svg">
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer__developer">
-          <p class="footer__dev">Разработано:</p>
-          <a href="#" class="button footer__link-dev">Html Academy</a>
-        </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__wrap">
+      <section class="footer__info">
+        <h3 class="footer__title">Барбершоп Бородинский
+        </h3>
+        <address class="footer__address">г. Санкт-Петербург, ул. Большая Конюшенная 19/8</address>
+        <a href="tel:+78125556666" class="footer__number">Тел.: +7 (812) 555-66-66</a>
+      </section>
+      <div class="footer__social">
+        <h3 class="footer__title visually-hidden">Социальные сети Барбершопа Бородинского
+        </h3>
+        <p class="footer__call">Давайте дружить!</p>
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a href="#" class="footer__link-soc">
+              <img class="footer__soc-img" width="30" height="30" src="image/svg/vk.svg" alt="Вконтакте">
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link-soc">
+              <img class="footer__soc-img" width="30" height="30" src="image/svg/facebook.svg" alt="Фейсбук">
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link-soc">
+              <img class="footer__soc-img" width="30" height="30" src="image/svg/instagram.svg" alt="Инстаграм">
+            </a>
+          </li>
+        </ul>
       </div>
-    </footer>
+      <div class="footer__developer">
+        <p class="footer__dev">Разработано:</p>
+        <a href="#" class="button footer__link-dev">Html Academy</a>
+      </div>
+    </div>
+  </footer>
+
+  <section class="login">
+    <div class="login__inner">
+      <div class="login__wrapper">
+        <h2 class="login__title">Личный кабинет</h2>
+        <p class="login__info">Введите свой логин и пароль, чтобы войти</p>
+        <form class="login__form" action="https://echo.htmlacademy.ru" method="post">
+          <p class="login__block login__block--login">
+            <label class="visually-hidden" for="login-login">Логин</label>
+            <input id="login-login" type="text" name="user-login" placeholder="Логин">
+          </p>
+          <p class="login__block login__block--password">
+            <label class="visually-hidden" for="login-password">Пароль</label>
+            <input id="login-password" type="password" name="user-password"placeholder="Праоль">
+          </p>
+          <div class="login__wrap">
+            <p class="login__box">
+              <input class="visually-hidden" type="checkbox" name="user-remember" id="login-remember">
+              <label for="login-remember">Запомните меня</label>
+            </p>
+            <a class="login__link" href="#">Забыл пароль</a>
+          </div>
+          <div class="login__container">
+            <button class="login__button button" type="submit">Войти<span> в личный кабинет</span></button>
+            <button class="login__close" type="button" aria-label="Закрыть"><span>Закрыть</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function loadStyle(url){
+       let link = document.createElement('link');
+       link.href = url;
+       link.rel = 'stylesheet';
+       document.body.appendChild(link);
+    }
+    loadStyle('css/style.min.css');
+ </script>
+
   <script src="js/script.min.js"></script>
 </body>
 </html>

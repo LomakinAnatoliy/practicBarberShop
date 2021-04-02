@@ -1,10 +1,9 @@
 //mixin for converting fonts
-
 @mixin font($font_name, $file_name, $weight, $style)
   @font-face
     font-family: $font_name
     font-display: swap
-    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2")
+    src: url('../fonts/#{$file_name}.woff') format('woff'), url('../fonts/#{$file_name}.woff2') format('woff2')
     font-weight: #{$weight}
     font-style: #{$style}
 
@@ -21,16 +20,16 @@
 // IMPORT SECTION
 
 // CSS library plug-in example (npm i --save-dev normalize.css)
-@import "../../node_modules/normalize.css/normalize.css"
+@import '../../node_modules/normalize.css/normalize.css'
 
-// @import "../libs/font-awesome/css/font-awesome.min.css"
+// @import '../libs/font-awesome/css/font-awesome.min.css'
 
 // USER VARIABLES SECTION
 
-$fontfamily: "PtSansNarrow", Franklin Gothic Cond, sans-serif
-$fontsize: 20px
-$lineheight: 27px
-$fontweight: 400
+$font-family: 'PtSansNarrow', Calibri, sans-serif
+$font-size: 20px
+$line-height: 27px
+$font-weight: 400
 $color-accent: #826550
 $color: #ffffff
 $background-color: #242424

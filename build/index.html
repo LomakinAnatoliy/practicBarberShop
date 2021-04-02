@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BarberShop</title>
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/index-min.min.css">
 </head>
 <body>
   <div class="background-image lazy-background">
@@ -17,7 +17,7 @@
         </picture>
       </a>
       <nav class="header__manu menu">
-        <button class="menu__open" type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <button class="menu__btn menu__btn--close" type="button"><span class="visually-hidden">Открыть меню</span></button>
         <div class="menu__wrap">
           <ul class="menu__list">
             <li class="menu__item menu__item--active">
@@ -27,7 +27,7 @@
               <a class="menu__link" href="jobs.html">Наши работы</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">Записаться</a>
+              <a class="menu__link" href="appointment.html">Записаться</a>
             </li>
             <li class="menu__item">
               <a class="menu__link" href="#">Контакты</a>
@@ -48,182 +48,229 @@
       </nav>
     </header>
   </div>
-    <main>
-      <div class="container">
-        <h1 class="visually-hidden">Парикмахерская BarberShop</h1>
-        <section class="statistics">
-          <header class="statistics__header">
-            <h2 class="statistics__title visually-hidden">Статистика BarberShop</h2>
-            <strong class="statistics__benefit">
-              Стрижка у нас<br>
-              это выгодно!
-            </strong>
-            <p class="statistics__text">
-              Мужская стрижка требует<br>
-              точного подхода. Обратимся<br>
-              к статистике:
-            </p>
-            <p class="statistics__decryption statistics__decryption-top">
-              <small>
-                * — приведённые данные ложь
-              </small>
-            </p>
-          </header>
-          <dl class="statistics__list">
-            <div class="statistics__item">
-              <dt>1 500 <sup>*</sup></dt>
-              <dd>рублей <br>вложений</dd>
-            </div>
-            <div class="statistics__item">
-              <dt>7 200</dt>
-              <dd>секунд <br>времени мастера</dd>
-            </div>
-            <div class="statistics__item">
-              <dt>90 000</dt>
-              <dd>постриженных <br>волос</dd>
-            </div>
-            <div class="statistics__item">
-              <dt>500 000 <sup>*</sup></dt>
-              <dd>лайков <br>и комплиментов</dd>
-            </div>
-          </dl>
-          <p class="statistics__decryption statistics__decryption-bottom">
+  <main>
+    <div class="container">
+      <h1 class="visually-hidden">Парикмахерская BarberShop</h1>
+      <section class="statistics">
+        <header class="statistics__header">
+          <h2 class="statistics__title visually-hidden">Статистика BarberShop</h2>
+          <strong class="statistics__benefit">
+            Стрижка у нас<br>
+            это выгодно!
+          </strong>
+          <p class="statistics__text">
+            Мужская стрижка требует<br>
+            точного подхода. Обратимся<br>
+            к статистике:
+          </p>
+          <p class="statistics__decryption statistics__decryption-top">
             <small>
               * — приведённые данные ложь
             </small>
           </p>
-        </section>
-        <section class="advantage">
-          <h2 class="visually-hidden">Преимущества BarberShop</h2>
-          <ul class="advantage__list">
-            <li class="advantage__item advantage__item--fast">
-              <h3 class="advantage__title">Быстро</h3>
-              <p class="advantage__text">
-                Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы — счастливый обладатель стильной стрижки-минутки
-              </p>
-            </li>
-            <li class="advantage__item advantage__item--cool">
-              <h3 class="advantage__title">Круто</h3>
-              <p class="advantage__text">
-                Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино. Во всяком случае внешне.
-              </p>
-            </li>
-            <li class="advantage__item advantage__item--expensive">
-              <h3 class="advantage__title">Дорого</h3>
-              <p class="advantage__text">
-                Наши мастера — профессионалы своего делаи не могут стоить дёшево. К тому же, разве цена не даёт определённый статус?
-              </p>
-            </li>
-          </ul>
-          <div class="advantage__dots dots">
-            <button class="dots__dot dots__dot--active" type="button"></button>
-            <button class="dots__dot " type="button"></button>
-            <button class="dots__dot " type="button"></button>
+        </header>
+        <dl class="statistics__list">
+          <div class="statistics__item">
+            <dt>1 500 <sup>*</sup></dt>
+            <dd>рублей <br>вложений</dd>
           </div>
-        </section>
+          <div class="statistics__item">
+            <dt>7 200</dt>
+            <dd>секунд <br>времени мастера</dd>
+          </div>
+          <div class="statistics__item">
+            <dt>90 000</dt>
+            <dd>постриженных <br>волос</dd>
+          </div>
+          <div class="statistics__item">
+            <dt>500 000 <sup>*</sup></dt>
+            <dd>лайков <br>и комплиментов</dd>
+          </div>
+        </dl>
+        <p class="statistics__decryption statistics__decryption-bottom">
+          <small>
+            * — приведённые данные ложь
+          </small>
+        </p>
+      </section>
+      <section class="advantage">
+        <h2 class="visually-hidden">Преимущества BarberShop</h2>
+        <ul class="advantage__list">
+          <li class="advantage__item advantage__item--fast">
+            <h3 class="advantage__title">Быстро</h3>
+            <p class="advantage__text">
+              Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы — счастливый обладатель стильной стрижки-минутки
+            </p>
+          </li>
+          <li class="advantage__item advantage__item--cool">
+            <h3 class="advantage__title">Круто</h3>
+            <p class="advantage__text">
+              Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино. Во всяком случае внешне.
+            </p>
+          </li>
+          <li class="advantage__item advantage__item--expensive">
+            <h3 class="advantage__title">Дорого</h3>
+            <p class="advantage__text">
+              Наши мастера — профессионалы своего делаи не могут стоить дёшево. К тому же, разве цена не даёт определённый статус?
+            </p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <section class="news">
+      <div class="news__wrap">
+        <h2 class="news__title">Новости и акции</h2>
+        <a href="#" class="news__button button">Показать все</a>
+        <ul class="news__list">
+          <li class="news__item">
+            <a href="#" class="news__link">
+              <time datetime = "2020-09-29">29 <span>сент</span></time>
+              <p>Нам наконец завезли Ягермайстер! Теперь вы можете пропусить стаканчик во время стрижки.</p>
+            </a>
+          </li>
+          <li class="news__item">
+            <a href="#" class="news__link">
+              <time datetime = "2020-09-19">19 <span>сент</span></time>
+              <p>В нашей команде пополнение, Борис «Бритва» Стригунец, пополнил наши стройные ряды. Спешите записаться!</p>
+            </a>
+          </li>
+          <li class="news__item">
+            <a href="#" class="news__link">
+              <time datetime="2020-09-09">9 <span>сент</span></time>
+              <p>Все дорожает, а наши стрижки нет! Как так? Приходите, постригитесь и узнаете, в чем здесь подвох!</p>
+            </a>
+          </li>
+        </ul>
       </div>
-      <section class="news">
-        <div class="news__wrap">
-          <h2 class="news__title">Новости и акции</h2>
-          <a href="#" class="news__button button">Показать все</a>
-          <ul class="news__list">
-            <li class="news__item">
-              <a href="#" class="news__link">
-                <time datetime = "2020-09-29">29 <span>сент</span></time>
-                <p>Нам наконец завезли Ягермайстер! Теперь вы можете пропусить стаканчик во время стрижки.</p>
-              </a>
-            </li>
-            <li class="news__item">
-              <a href="#" class="news__link">
-                <time datetime = "2020-09-19">19 <span>сент</span></time>
-                <p>В нашей команде пополнение, Борис «Бритва» Стригунец, пополнил наши стройные ряды. Спешите записаться!</p>
-              </a>
-            </li>
-            <li class="news__item">
-              <a href="#" class="news__link">
-                <time datetime="2020-09-09">9 <span>сент</span></time>
-                <p>Все дорожает, а наши стрижки нет! Как так? Приходите, постригитесь и узнаете, в чем здесь подвох!</p>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="reviews">
-        <div class="reviews__wrap">
-          <h2 class="reviews__title">Отзывы о нас</h2>
-          <a href="#" class="reviews__button button">Оставить свой</a>
-          <div class="reviews__container">
-            <button class="reviews__button-back button" type="button">
-              <span class="visually-hidden">Назад</span>
-            </button>
-            <div class="reviews__client">
-              <div class="reviews__img-wrap">
-                <picture class="reviews__client-img">
-                  <source class="lazy" srcset="image/gif/250x160.gif" data-srcset="image/@1x/Norbert-Buduczki.webp 1x, image/@2x/Norbert-Buduczki.webp 2x" type="image/webp">
-                  <img class="lazy" width="250" height="160" src="image/gif/250x160.gif" data-src="image/@1x/Norbert-Buduczki.jpg" data-srcset="image/@1x/Norbert-Buduczki.jpg 1x, image/@2x/Norbert-Buduczki.jpg 2x" alt="Фото Norbert Buduczki">
-                </picture>
-              </div>
-              <figure class="reviews__box">
-                <figcaption class="reviews__client-name"><cite>Norbert Buduczki</cite></figcaption>
-                <blockquote class="reviews__client-text">
-                  Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку
-                </blockquote>
-              </figure>
+    </section>
+    <section class="reviews">
+      <div class="reviews__wrap">
+        <h2 class="reviews__title">Отзывы о нас</h2>
+        <a href="#" class="reviews__button button">Оставить свой</a>
+        <div class="reviews__container">
+          <div class="reviews__client">
+            <div class="reviews__img-wrap">
+              <picture class="reviews__client-img">
+                <source class="lazy" srcset="image/gif/250x160.gif" data-srcset="image/@1x/Norbert-Buduczki.webp 1x, image/@2x/Norbert-Buduczki.webp 2x" type="image/webp">
+                <img class="lazy" width="250" height="160" src="image/gif/250x160.gif" data-src="image/@1x/Norbert-Buduczki.jpg" data-srcset="image/@1x/Norbert-Buduczki.jpg 1x, image/@2x/Norbert-Buduczki.jpg 2x" alt="Фото Norbert Buduczki">
+              </picture>
             </div>
-            <button class="reviews__button-next button" type="button">
-              <span class="visually-hidden">Вперед</span>
-            </button>
-            <div class="reviews__dots dots">
-              <button class="reviews__dot dots__dot reviews__dot--active" type="button">
-                <span class="visually-hidden">Первый отзыв</span>
-              </button>
-              <button class="reviews__dot dots__dot " type="button">
-                <span class="visually-hidden">Второй отзыв</span>
-              </button>
-              <button class="reviews__dot dots__dot " type="button">
-                <span class="visually-hidden">Третий отзыв</span>
-              </button>
+            <figure class="reviews__box">
+              <figcaption class="reviews__client-name"><cite>Norbert Buduczki 1</cite></figcaption>
+              <blockquote class="reviews__client-text">
+                Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку
+              </blockquote>
+            </figure>
+          </div>
+          <div class="reviews__client">
+            <div class="reviews__img-wrap">
+              <picture class="reviews__client-img">
+                <source class="lazy" srcset="image/gif/250x160.gif" data-srcset="image/@1x/Norbert-Buduczki.webp 1x, image/@2x/Norbert-Buduczki.webp 2x" type="image/webp">
+                <img class="lazy" width="250" height="160" src="image/gif/250x160.gif" data-src="image/@1x/Norbert-Buduczki.jpg" data-srcset="image/@1x/Norbert-Buduczki.jpg 1x, image/@2x/Norbert-Buduczki.jpg 2x" alt="Фото Norbert Buduczki">
+              </picture>
             </div>
+            <figure class="reviews__box">
+              <figcaption class="reviews__client-name"><cite>Norbert Buduczki 2</cite></figcaption>
+              <blockquote class="reviews__client-text">
+                Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку
+              </blockquote>
+            </figure>
+          </div>
+          <div class="reviews__client">
+            <div class="reviews__img-wrap">
+              <picture class="reviews__client-img">
+                <source class="lazy" srcset="image/gif/250x160.gif" data-srcset="image/@1x/Norbert-Buduczki.webp 1x, image/@2x/Norbert-Buduczki.webp 2x" type="image/webp">
+                <img class="lazy" width="250" height="160" src="image/gif/250x160.gif" data-src="image/@1x/Norbert-Buduczki.jpg" data-srcset="image/@1x/Norbert-Buduczki.jpg 1x, image/@2x/Norbert-Buduczki.jpg 2x" alt="Фото Norbert Buduczki">
+              </picture>
+            </div>
+            <figure class="reviews__box">
+              <figcaption class="reviews__client-name"><cite>Norbert Buduczki 3</cite></figcaption>
+              <blockquote class="reviews__client-text">
+                Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку
+              </blockquote>
+            </figure>
           </div>
         </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__wrap">
+      <section class="footer__info">
+        <h3 class="footer__title">Барбершоп Бородинский
+        </h3>
+        <address class="footer__address">г. Санкт-Петербург, ул. Большая Конюшенная 19/8</address>
+        <a href="tel:+78125556666" class="footer__number">Тел.: +7 (812) 555-66-66</a>
       </section>
-      <footer class="footer">
-        <div class="footer__wrap">
-          <section class="footer__info">
-            <h3 class="footer__title">Барбершоп Бородинский
-            </h3>
-            <address class="footer__address">г. Санкт-Петербург, ул. Большая Конюшенная 19/8</address>
-            <a href="tel:+78125556666" class="footer__number">Тел.: +7 (812) 555-66-66</a>
-          </section>
-          <div class="footer__social">
-            <h3 class="footer__title visually-hidden">Социальные сети Барбершопа Бородинского
-            </h3>
-            <p class="footer__call">Давайте дружить!</p>
-            <ul class="footer__list">
-              <li class="footer__item">
-                <a href="#" class="footer__link-soc">
-                  <img class="footer__soc-img" width="30" height="30" src="image/svg/vk.svg">
-                </a>
-              </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link-soc">
-                  <img class="footer__soc-img" width="30" height="30" src="image/svg/facebook.svg">
-                </a>
-              </li>
-              <li class="footer__item">
-                <a href="#" class="footer__link-soc">
-                  <img class="footer__soc-img" width="30" height="30" src="image/svg/instagram.svg">
-                </a>
-              </li>
-            </ul>
+      <div class="footer__social">
+        <h3 class="footer__title visually-hidden">Социальные сети Барбершопа Бородинского
+        </h3>
+        <p class="footer__call">Давайте дружить!</p>
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a href="#" class="footer__link-soc">
+              <img class="footer__soc-img" width="30" height="30" src="image/svg/vk.svg" alt="Вконтакте">
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link-soc">
+              <img class="footer__soc-img" width="30" height="30" src="image/svg/facebook.svg" alt="Фейсбук">
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link-soc">
+              <img class="footer__soc-img" width="30" height="30" src="image/svg/instagram.svg" alt="Инстаграм">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__developer">
+        <p class="footer__dev">Разработано:</p>
+        <a href="#" class="button footer__link-dev">Html Academy</a>
+      </div>
+    </div>
+  </footer>
+
+  <section class="login">
+    <div class="login__inner">
+      <div class="login__wrapper">
+        <h2 class="login__title">Личный кабинет</h2>
+        <p class="login__info">Введите свой логин и пароль, чтобы войти</p>
+        <form class="login__form" action="https://echo.htmlacademy.ru" method="post">
+          <p class="login__block login__block--login">
+            <label class="visually-hidden" for="login-login">Логин</label>
+            <input id="login-login" type="text" name="user-login" placeholder="Логин">
+          </p>
+          <p class="login__block login__block--password">
+            <label class="visually-hidden" for="login-password">Пароль</label>
+            <input id="login-password" type="password" name="user-password"placeholder="Праоль">
+          </p>
+          <div class="login__wrap">
+            <p class="login__box">
+              <input class="visually-hidden" type="checkbox" name="user-remember" id="login-remember">
+              <label for="login-remember">Запомните меня</label>
+            </p>
+            <a class="login__link" href="#">Забыл пароль</a>
           </div>
-          <div class="footer__developer">
-            <p class="footer__dev">Разработано:</p>
-            <a href="#" class="button footer__link-dev">Html Academy</a>
+          <div class="login__container">
+            <button class="login__button button" type="submit">Войти<span> в личный кабинет</span></button>
+            <button class="login__close" type="button" aria-label="Закрыть"><span>Закрыть</span></button>
           </div>
-        </div>
-      </footer>
-    </main>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function loadStyle(url){
+        let link = document.createElement('link');
+        link.href = url;
+        link.rel = 'stylesheet';
+        document.body.appendChild(link);
+    }
+    loadStyle('css/style.min.css');
+  </script>
+
   <script src="js/script.min.js"></script>
 </body>
 </html>

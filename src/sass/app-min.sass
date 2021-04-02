@@ -1,0 +1,300 @@
+@import config
+@import fonts
+
+*, 
+*::before,
+*::after
+  box-sizing: border-box
+
+*:active
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
+  -webkit-tap-highlight-color: transparent
+
+picture
+  display: grid
+
+img
+  max-width: 100%
+  height: auto
+
+a, button
+  padding: 0
+  outline: none
+
+button
+  cursor: pointer
+
+h1, h2, h3, h4, h5, h6, p, ul, li, figure, blockquote, fieldset
+  margin: 0
+  padding: 0
+
+li
+  list-style-type: none
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  border: 0
+  padding: 0
+  white-space: nowrap
+  clip-path: inset(100%)
+  clip: rect(0 0 0 0)
+  overflow: hidden
+
+body
+  margin: 0
+  padding: 0
+  font-family: $font-family
+  font-size: $font-size
+  line-height: $line-height
+  font-weight: $font-weight
+  color: $color
+  background-color: $background-color
+
+.header
+  display: grid
+  grid-template-columns: 1fr max-content
+  grid-template-rows: repeat(2, min-content)
+  grid-row-gap: 55px
+  +to($break_sm)
+    grid-row-gap: 0
+  &__logo
+    grid-row: 2/3
+    margin: 0 auto 435px
+    +to($break_md)
+      margin-bottom: 255px
+    +to($break_sm)
+      grid-row: 1/2
+      margin-bottom: 0
+
+.logo
+  +to($break_sm)
+    width: 100%
+    & img
+      width: 225px !important
+      height: auto !important
+  & picture
+    display: flex
+    justify-content: center
+    +to($break_md)
+      height: 105px
+
+.menu
+  +to($break_sm)
+    position: relative
+    grid-row: 2/3
+  &__btn
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 10
+    width: 70px
+    height: 50px
+    padding: 15px 17px
+    align-self: baseline
+    border: none
+    +from($break_sm)
+      display: none
+  &__wrap
+    display: flex
+    justify-content: space-between
+    max-width: 960px
+    min-width: 320px
+    margin: 0 auto
+    +to($break-md)
+      justify-content: center
+    +to($break_sm)
+      position: absolute
+      top: -100%
+      display: block
+      width: 100%
+      margin: 0
+  &__list,
+  &__user,
+  &__item
+    margin: 0
+    padding: 0
+  &__list
+    display: grid
+    grid-template-columns: repeat(5, max-content)
+    grid-template-rows: max-content
+    +to($break_sm)
+      grid-template-columns: 1fr
+  &__item
+    &--active
+      display: block
+      padding: 25px 30px
+      +to($break-md)
+        padding-right: 15px
+        padding-left: 15px
+      +to($break_sm)
+        grid-row: 1 / 2
+        padding-top: 12px
+        padding-bottom: 11px
+        border-bottom: 1px solid #71543f
+  &__link
+    padding: 25px 30px
+    font-size: 18px
+    font-weight: 700
+    text-transform: uppercase
+    text-decoration: none
+    text-align: cente
+    +to($break-md)
+      padding-right: 15px
+      padding-left: 15px
+    +to($break_sm)
+      padding-top: 11px
+      padding-bottom: 11px
+      text-align: start
+      border-top: 1px solid #886e5b
+      border-bottom: 1px solid #71543f
+    &--active
+        position: relative
+        padding: 0
+        &::after
+          content: ''
+          position: absolute
+          left: 0
+          bottom: -27px
+          height: 3px
+          width: 100%
+        +to($break_sm)
+          text-align: center
+          border: none
+          &::after
+            display: none
+          & span
+            display: none
+
+.user
+  &__link
+    display: flex
+    align-items: center
+    +to($break_sm)
+      & span
+        font-weight: 400
+        text-transform: none
+  &__icon
+    height: 27px
+    margin-right: 20px
+    +to($break-md)
+      margin-right: 0
+    +to($break_sm)
+      margin-right: 13px
+
+.style-logo
+  margin-bottom: 100px
+  pointer-events: auto
+  +to($break_sm)
+    margin-bottom: 0
+
+.app-form
+  display: grid
+  grid-template-columns: 1fr max-content
+  grid-auto-rows: max-content
+  grid-row-gap: 40px
+  padding: 55px 25px 80px
+  +to($break_sm)
+    padding: 80px 20px 80px
+  &__title
+    grid-column: span 1
+    grid-row: span 1
+    align-self: center
+    font-size: 40px
+    text-transform: uppercase
+    +to($break_sm)
+      font-size: 30px
+      text-align: center
+  &__link
+    grid-column: span 1
+    grid-row: span 1
+    align-self: center
+    justify-self: end
+    +to($break_sm)
+      display: none
+  &__form
+    grid-column: span 2
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-auto-rows: max-content
+  & input,
+  & textarea
+    width: 100%
+    padding: 20px
+    border: 1px solid #e5ddd5
+    border-radius: 0
+    &::placeholder
+      font-size: 24px
+  &__name,
+  &__surname,
+  &__phone
+    margin-right: 25px
+    +to($break_md)
+      margin-right: 0
+  &__name,
+  &__surname,
+  &__patronymic
+    grid-column: span 2
+    grid-row: span 1
+    margin-bottom: 35px
+  &__name
+    +to($break_sm)
+      grid-column: span 6
+      grid-row: 2 / 3
+  &__surname
+    +to($break_sm)
+      grid-column: span 6
+      grid-row: 1 / 2
+  &__patronymic
+    +to($break_sm)
+      grid-column: span 6
+      grid-row: 3 / 4
+  &__name,
+  &__surname
+    +to($break_sm)
+      margin-bottom: 5px
+  &__phone,
+  &__email
+    grid-column: span 3
+    grid-row: sapn 1
+    margin-bottom: 35px
+  &__phone
+    +to($break_md)
+      grid-column: span 6
+      grid-row: 2 / 3
+    +to($break_sm)
+      grid-row: 4 / 5
+      margin-bottom: 5px
+  &__email
+    +to($break_md)
+      grid-column: span 6
+      grid-row: 3 / 4
+    +to($break_sm)
+      grid-row: 5 / 6
+  &__info
+    grid-column: 1 / 7
+    grid-row: span 1
+    margin-bottom: 70px
+    & textarea
+      height: 200px
+      resize: none
+  &__input
+    & label
+      position: relative
+      &::before
+        content: ''
+        border: 1px solid #e5ddd5
+  &__radio
+    grid-column: 1 / 7
+  &__checkbox
+    grid-column: 1 / 7
+    grid-row: span 1
+  &__button
+    grid-column: 1 / 7
+    grid-row: span 1
+    width: 100%
+    border: none
